@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        background-color: #bbbdc2;
+      }
+      .wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      canvas {
+          width: 66vw;
+          height: 40vw;
+      }
+      @media screen and (max-width: 768px) {
+        .wrapper {
+          flex-direction: column-reverse;
+          align-items: center;
+          justify-content: flex-end;
+
+        }
+        canvas {
+          width: 100vw;
+          height: 66vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <canvas id="canvas" width="1080" height="720">
+        Désolé, votre navigateur ne prend pas en charge &lt;canvas&gt;.
+      </canvas>
+      <div>
+        <div>
+          <input type="color" id="pointsColor" name="pointsColor" value="#FFFFFF" />
+          <label for="points">Couleur des points</label>
+        </div>
+        <div>
+          <input type="color" id="linkColor" name="linkColor" value="#000000" />
+          <label for="linkColor">links color</label>
+        </div>
+        
+        <div>
+          <input
+            type="color"
+            id="backgroundColor"
+            name="backgroundColor"
+            value="#2fc908"
+          />
+          <label for="linkColor">background color</label>
+        </div>
+        <div>
+            <input type="range" id="speed" name="speed" min="1"  value= "1" max="10" />
+            <label for="speed">speed: <span id="speedField">?</span></label>
+        </div>
+        <div>
+            <input type="range" id="pointsCount" name="pointsCount" min="1"  value= "20" max="300" />
+            <label for="pointsCount">points count : <span id="pointsCountField">?</span></label>
+        </div
+        <div>
+            <input type="range" id="linkLength" name="linkLength" min="0"  value= "200" max="1000" />
+            <label for="linkLength">links length: <span id="linkLengthField">?</span></label>
+            
+        </div>
+
+      </div>
+    </div>
+  </body>
+  <script src="utils.js"></script>
+  <script src="particleHandler.js"></script>
+  <script src="particleManager.js"></script>
+  <script src="index.js"></script>
+</html>
